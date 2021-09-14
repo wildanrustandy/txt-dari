@@ -23,7 +23,7 @@ def start():
                     # prikitiw is the keyword
                     # if you want to turn off the case sensitive like: priktiw, Prikitiw, pRiKiTiw
                     # just use lower(message) and check it, but please remove the replace function line
-                    if keyword.lower() in message:
+                    if keyword in message.lower():
                         message = message.replace(keyword, "")
                         if len(message) is not 0:
                             if dms[i]['media'] is None:
