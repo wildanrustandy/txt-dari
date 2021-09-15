@@ -27,7 +27,6 @@ def start():
                     # if you want to turn off the case sensitive like: priktiw, Prikitiw, pRiKiTiw
                     # just use lower(message) and check it, but please remove the replace function line
                     if keyword in message.lower():
-                        dm = tw.send_dm(sender_id, text=answer2)
                         message = message.replace(keyword, "")
                         if len(message) is not 0:
                             if dms[i]['media'] is None:
@@ -44,7 +43,6 @@ def start():
                             tw.delete_dm(id)
                     else:
                         print("DM will be deleted because does not contains keyword..")
-                        dm = tw.send_dm(sender_id, text=answer)
                         tw.delete_dm(id)
 
             dms = list()

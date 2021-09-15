@@ -72,10 +72,10 @@ class Twitter:
             time.sleep(60)
             pass
 
-    def send_dm(self, recipient_id, text):
-        print('Sending DM to sender')
-        # dm = self.api.send_direct_message(recipient_id, text='ASDASDSAD')
-        dm = self.api.send_direct_message(recipient_id, text)
+    # def send_dm(self, recipient_id, text):
+    #     print('Sending DM to sender')
+    #     # dm = self.api.send_direct_message(recipient_id, text='ASDASDSAD')
+    #     dm = self.api.send_direct_message(recipient_id, text)
 
 
 
