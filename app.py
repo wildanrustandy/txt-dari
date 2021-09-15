@@ -7,6 +7,9 @@ import time
 
 tw = Twitter()
 keyword = 'ask' or 'tanya'
+answer = 'Hi, terimakasih sudah dm, pastikan kamu gunakan keyword yang tertera di bio ya'
+answer2 = 'Hi, terimakasih sudah dm, dm kamu akan segera di tweet!'
+
 
 def start():
     print("Starting program...")
@@ -24,6 +27,7 @@ def start():
                     # if you want to turn off the case sensitive like: priktiw, Prikitiw, pRiKiTiw
                     # just use lower(message) and check it, but please remove the replace function line
                     if keyword in message.lower():
+                        dm = tw.send_dm(sender_id, text=answer2)
                         message = message.replace(keyword, "")
                         if len(message) is not 0:
                             if dms[i]['media'] is None:
@@ -40,6 +44,7 @@ def start():
                             tw.delete_dm(id)
                     else:
                         print("DM will be deleted because does not contains keyword..")
+                        dm = tw.send_dm(sender_id, text=answer)
                         tw.delete_dm(id)
 
             dms = list()

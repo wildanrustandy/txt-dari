@@ -32,6 +32,7 @@ class Twitter:
                 json_data = _json.encode_basestring(message_data)
                 print(json_data)
                 print("Getting message -> "+str(message)+" by sender id "+str(sender_id))
+                # print("SEND DM", self.send_direct_message(sender_id, text='Hi terimakasih sudah dm, tweet mu dalam antrian') )
 
                 if "attachment" not in json_data:
                     print("Dm does not have any media...")
@@ -70,6 +71,12 @@ class Twitter:
             print(ex)
             time.sleep(60)
             pass
+
+    def send_dm(self, recipient_id, text):
+        print('Sending DM to sender')
+        # dm = self.api.send_direct_message(recipient_id, text='ASDASDSAD')
+        dm = self.api.send_direct_message(recipient_id, text)
+
 
 
     # Delete the message if it doesnt contain a keyword
